@@ -1,0 +1,27 @@
+<?php
+/**
+ * @var Employee $block
+ */
+use Dtn\Knockout\Block\Employee;
+?>
+
+<div id="employee_knockout" data-bind="scope:'addemployee'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+    <script type="text/x-magento-init">
+    {
+        "#employee_knockout": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "addemployee" : {
+                        "layout" : <?php  echo $block->getJsLayout() ?>,
+                        "employeeList" : <?php echo $block->getEmployees() ?>,
+                        "component" : "Dtn_Knockout\/js\/view\/knockouts"
+                    }
+                }
+            }
+
+        }
+    }
+    </script>
